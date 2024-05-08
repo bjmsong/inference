@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "python": "/root/miniconda3/envs/llm/bin/python",
+            "name": "Python: 当前文件",
+            "type": "python",
+            "request": "launch",
+            "program": "language/gpt-j/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--scenario=Offline", 
+                "--model-path=/root/autodl-tmp/model/checkpoint-final/",
+                "--dataset-path=language/gpt-j/data/cnn_eval.json",
+                "--accuracy",
+                "--gpu", 
+                "--dtype=bfloat16",
+                "--max_examples=100"
+            ]   
+        }
+    ]
+}

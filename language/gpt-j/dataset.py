@@ -46,10 +46,11 @@ class Dataset():
         self.list_data_dict = utils.jload(self.dataset_path)
 
         prompt_input, prompt_no_input = PROMPT_DICT["prompt_input"], PROMPT_DICT["prompt_no_input"]
+        # 在字符串中查找花括号 {} 中的占位符，并使用提供的字典中对应的键值对来替换占位符
         self.sources = [prompt_input.format_map(
-            example) for example in self.list_data_dict]
+            example) for example in self.list_data_dict[:100]]
         self.targets = [
-            f"{example['output']}" for example in self.list_data_dict]
+            f"{example['output']}" for example in self.list_data_dict[:100]]
 
         self.source_encoded_input_ids, self.source_encoded_attn_masks = self.encode_samples()
 

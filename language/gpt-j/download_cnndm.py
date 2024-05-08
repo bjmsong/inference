@@ -1,6 +1,6 @@
 # experiment config
 model_id = "EleutherAI/gpt-j-6b"
-dataset_id = "cnn_dailymail"
+dataset_id = "ccdv/cnn_dailymail"
 dataset_config = "3.0.0"
 text_column = "article"
 summary_column = "highlights"

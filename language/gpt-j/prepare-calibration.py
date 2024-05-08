@@ -11,7 +11,7 @@ def get_args():
 
     return parser.parse_args()
 
-dataset_id='cnn_dailymail'
+dataset_id='ccdv/cnn_dailymail'
 version='3.0.0'
 split='train'
 
@@ -25,7 +25,7 @@ def prepare_calibration_data(calibration_list_file, output_dir):
         print("Calibration list file not found: {}".format(calibration_list_file))
         sys.exit(1)
 
-    dataset = load_dataset("cnn_dailymail", name="3.0.0", split='train')
+    dataset = load_dataset(dataset_id, name="3.0.0", split='train')
     train = dict((x['id'], x) for x in dataset)
 
     
